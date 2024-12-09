@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abc-manufacturing
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: abc-manufacturing
+  template:
+    metadata:
+      labels:
+        app: abc-manufacturing
+    spec:
+      containers:
+      - name: abc-manufacturing
+        image: kbcv/abc-manufacturing:latest
+        ports:
+        - containerPort: 3000
